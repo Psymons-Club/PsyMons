@@ -10,11 +10,10 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 contract PsyMons is ERC721Enumerable,Ownable,ReentrancyGuard{
 
     //State
-    uint constant public MAX_SUPPLY = 1001;
+    uint constant public MAX_SUPPLY = 991;
     uint constant public PRICE = 1 ether;
     string public PROVENANCE_HASH = "";
     string internal baseURI;
-    bool public presaleActive = true;
 
     //Counts
     using Counters for Counters.Counter;
@@ -25,7 +24,11 @@ contract PsyMons is ERC721Enumerable,Ownable,ReentrancyGuard{
     mapping(uint=>uint) public reflectiveShare;
     mapping(uint=>uint) public reflectiveRetrieved;
     
-    constructor() ERC721("Psy Mons","PSY"){}
+    constructor() ERC721("PsyMons","PSY"){
+        for(uint i=992;i<=1001;i++){
+            _safeMint(i,msg.sender);
+        }
+    }
 
     //Mint NFTs
     //if max supply has not been reached
@@ -34,7 +37,6 @@ contract PsyMons is ERC721Enumerable,Ownable,ReentrancyGuard{
     function mint() external payable{
         require(tokenId_.current() < MAX_SUPPLY,"Max supply has been reached");
         require(msg.value >= PRICE,"Full price needs to be paid by the user");
-        require(!presaleActive,"Presale going on right now");
         tokenId_.increment();
         uint currentId = tokenId_.current();
         _safeMint(msg.sender,currentId);
@@ -85,11 +87,6 @@ contract PsyMons is ERC721Enumerable,Ownable,ReentrancyGuard{
     //Owner modifiable base URI (to switch between api and folder hash)
     function setBaseURI(string memory newBaseURI) external onlyOwner(){
         baseURI = newBaseURI;
-    }
-
-    //Debug function to toggle presale
-    function togglePresale() external onlyOwner{
-        presaleActive = !presaleActive;
     }
 
     //Owner function for retrieving non reward balance
