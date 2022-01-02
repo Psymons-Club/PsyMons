@@ -462,3 +462,8 @@ body{
     opacity: 0.2;
   }
 }
+
+.side-img {
+  height: max-content;
+  width: 100%;
+}
