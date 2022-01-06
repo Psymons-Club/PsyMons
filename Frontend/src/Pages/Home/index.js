@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 export default function() {
     return (<>
-    <div className={`flex mx-auto w-2/3`} style={{ height: "100vh" }}>
-        <div class="flex flex-col items-center dark-theme w-4/5 my-auto mx-auto p-6 -m-16 rounded-lg shadow-lg font-nunito">
-            <img src='/assets/WebsiteRenders/Render1_no_bg.png' class='side-img' alt='IMG TBD'/></div>    
+    <div className={`flex mx-auto`} style={{ height: "90vh" }}>
+        <div class="flex flex-col items-center dark-theme my-auto mx-auto">
+            <img src='/assets/WebsiteRenders/BlueVRedNoBG.png' class='side-img' alt='IMG TBD'/></div>    
         </div>
     <div className={`flex mx-auto w-4/5`} style={{ height: "100vh" }}>
         <div class="flex flex-col dark-theme w-1/2 my-auto mx-auto p-6 -m-16 rounded-lg shadow-lg font-encode text-left">
