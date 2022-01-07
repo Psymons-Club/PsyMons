@@ -467,3 +467,19 @@ body{
   height: max-content;
   width: 100%;
 }
+
+.clear-left{
+  clear:left;
+}
+
+.hero-image::after {
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgb(224, 168, 13) 100%);
+  bottom: 0;
+  left:0;
+  right:0;
+  height: 75vh;
+  width: 100%;
+  content: '';
+}
