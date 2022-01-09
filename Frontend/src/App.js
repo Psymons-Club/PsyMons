@@ -8,6 +8,7 @@ import PetDetail from "./Pages/PetDetail"
 import NewPet from "./Pages/NewPet"
 import Store from "./Pages/Store"
 import Home from "./Pages/Home"
+import AboutUs from './Pages/AboutUs';
 
 function App() {
   return (
@@ -30,7 +31,10 @@ function App() {
           <Route exact path="/store">
             <Store />
           </Route>
-          <Redirect to="/home"/>
+          <Route exact path="/aboutus">
+            <AboutUs />
+          </Route>
+          <Redirect to="/home" />
         </Switch>
       </Router>
 
