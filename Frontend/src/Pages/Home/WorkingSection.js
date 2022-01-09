@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 
 export class WorkingSection extends Component {
     content = [{
-        heading: "Shooting Stars",
-        description: "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.",
+        heading: "Mint",
+        description: "Get your own Psymons",
         icon: "fa fa-xs fa-arrow-right"
     },{
-        heading: "The Catalyzer",
-        description: "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.",
+        heading: "Earn",
+        description: "For every PsyMon that gets minted after yours you get reflection rewards",
         icon: "fa fa-xs fa-arrow-right"
     },{
-        heading: "Neptune",
-        description: "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.",
+        heading: "Play",
+        description: "Interact with your PsyMons in AR, PvP, PvE and much more . . .",
         icon: "fa fa-xs fa-arrow-right"
     }]
     render() {
@@ -23,9 +23,9 @@ export class WorkingSection extends Component {
                                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-7xl">How
                                     <br class="hidden lg:inline-block" />it works?
                                     </h1>
-                            <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/BlueVRedNoBG.png" />
+                            <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/BlueVRedDark.png" />
                         </div>
-                        <div data-aos="fade-left" class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+                        <div data-aos="fade-left" class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center lg:w-1/4">
                             {this.content.map((task) => (
                                 <div class="flex flex-col mb-10 lg:items-start items-center">
                                     <div class="w-8 h-8 inline-flex items-center justify-center rounded-full bg-indigo-100 mb-5">
