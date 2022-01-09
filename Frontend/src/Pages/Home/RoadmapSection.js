@@ -21,7 +21,7 @@ export class RoadmapSection extends Component {
                 <section class="border-t border-gray-200 font-encode dark-theme">
                     <div class="container px-5 py-24 mx-auto flex flex-wrap">
                         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-7xl text-center w-full">Roadmap</h1>
-                        <div data-aos="fade-up" class="timeline flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+                        <div data-aos="fade-up"class="timeline flex flex-col px-15 flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
                             <div class="outer">
                                 {this.content.map((time) => (
                                     <div class="card">

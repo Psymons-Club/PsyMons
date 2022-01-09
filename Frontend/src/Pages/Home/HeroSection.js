@@ -5,11 +5,11 @@ const HeroSection = () => {
         <div>
             <section class="bg-red-200 text-gray-900 relative">
             
-              <div class="min-h-screen hero-image bg-right-bottom bg-cover flex" style={{backgroundImage : `url("/assets/WebsiteRenders/Allwith45Yellow.png")`}}>
+              <div class="min-h-screen bg-right-bottom bg-cover flex" style={{backgroundImage : `url("/assets/WebsiteRenders/All45Dark.png")`}}>
                 <div class="relative container mx-auto p-4 flex items-end z-10 font-encode font-extrabold">
                   <div data-aos="fade-left">
-                    <div class="content float-left py-4 px-5 my-5">
-                      <div class="heading mb-3 text-4xl md:text-4xl lg:text-7xl">PSYMONS</div>
+                    <div class="content float-left py-4 px-5 my-5 text-gray-100">
+                      <div class="heading mb-3 text-4xl md:text-4xl lg:text-7xl">COMING SOON</div>
                       <div class="text leading-normal hidden sm:block">Helping Those From the Future Find Purpose</div>
                     </div>
                     <div class="cta clear-left px-5">
