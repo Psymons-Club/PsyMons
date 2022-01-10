@@ -10,10 +10,10 @@ const user = {
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-    { name: 'Banner', href: '#', current: true },
-    { name: 'What are we', href: '#', current: false },
-    { name: 'How it works', href: '#', current: false },
-    { name: 'Roadmap', href: '#', current: false },
+    { name: 'Home', href: '/home', current: true },
+    { name: 'Lore', href: '/aboutus', current: false },
+    // { name: 'How it works', href: '#', current: false },
+    // { name: 'Roadmap', href: '#', current: false },
 ]
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -69,16 +69,15 @@ export default function Example() {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                <div className="flex-shrink-0">
+                                {/* <div className="flex-shrink-0">
                                     <button
                                         type="button"
                                         className="relative inline-flex items-center px-4 py-2 border border-white shadow-sm text-sm font-medium rounded-md text-white hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
                                     >
-                                        {/* <PlusSmIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" /> */}
                                         <span>Connect to Wallet</span>
                                     </button>
-                                </div>
-                                <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
+                                </div> */}
+                                {/* <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
                                     <button
                                         type="button"
                                         className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -87,7 +86,7 @@ export default function Example() {
                                         <BellIcon className="h-6 w-6" aria-hidden="true" />
                                     </button>
 
-                                    {/* Profile dropdown */}
+                                    
                                     <Menu as="div" className="ml-3 relative">
                                         <div>
                                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -123,7 +122,7 @@ export default function Example() {
                                             </Menu.Items>
                                         </Transition>
                                     </Menu>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -145,7 +144,7 @@ export default function Example() {
                                 </Disclosure.Button>
                             ))}
                         </div>
-                        <div className="pt-4 pb-3 border-t border-gray-700">
+                        {/* <div className="pt-4 pb-3 border-t border-gray-700">
                             <div className="flex items-center px-5 sm:px-6">
                                 <div className="flex-shrink-0">
                                     <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
@@ -174,7 +173,7 @@ export default function Example() {
                                     </Disclosure.Button>
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
                     </Disclosure.Panel>
                 </>
             )}

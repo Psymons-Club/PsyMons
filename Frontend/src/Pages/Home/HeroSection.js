@@ -19,7 +19,16 @@ const HeroSection = () => {
                             block sm:inline-block global-transition text-center hover:bg-yellow-400" href="https://twitter.com/PsymonClub" target="blank" >
                         <div class="flex justify-center items-center">
                           <span>Follow us</span>
-                          <span class="fa fa-xs fa-twitter ml-4"></span>
+                          <span class="fab fa-lg fa-twitter ml-4"></span>
+                        </div>
+                      </a>
+                      <a class="
+                            no-underline
+                            btn btn-primary rounded-full bg-white mx-3 px-4 py-2 text-gray-900
+                            block sm:inline-block global-transition text-center hover:bg-yellow-400" href="https://discord.gg/M2835FP6zg" target="blank" >
+                        <div class="flex justify-center items-center">
+                          <span>Join Our Discord Server</span>
+                          <span class="fab fa-lg fa-discord ml-4"></span>
                         </div>
                       </a>
                     </div>

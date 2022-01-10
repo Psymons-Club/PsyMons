@@ -34,33 +34,20 @@ const AboutUs = ({ }) => {
         setCurrentState(newState);
     }
     return (<>
-        <div className="w-full text-white h-screen flex items-center justify-around">
-            {complete ? <div className="w-full px-8">
-                {textToShow.map((e) => <><br /><div>{e}</div><br /></>)}
-            </div> : <>
-                {currentState > 0 && <button onClick={() => handleClick(-1)} className="flex-grow-0">
-                    Left
-                </button>}
-
-                <div className="px-8 flex-grow" ref={typewriterRef}>
-                    <div className="w-full text-center">
-                        <Typewriter
-                            options={{
-                                strings: textToShow[currentState],
-                                autoStart: true,
-                                loop: false,
-                                cursor: "",
-                                delay: 10,
-
-                            }}
-                        />
+        <div className="w-full text-white h-screen flex items-center justify-around bg-right-bottom bg-cover" style={{backgroundImage : `url("/assets/WebsiteRenders/All45Dark.png")`}}>
+            <div className="w-full px-8" >
+                <div className="px-8 flex-grow">
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-5xl">From Web 4.0
+                        <br class="hidden lg:inline-block" />To Web 3.0
+                    </h1>
+                    <div className="mx-2 w-3/5 text-left font-encode font-bold">
+                        {textToShow.map((text) => (<div class="">
+                                {text}
+                            </div>))
+                        }
                     </div>
                 </div>
-                <button onClick={() => handleClick(1)} className="flex-grow-0">
-                    Right
-                </button>
-            </>}
-
+            </div>
         </div>
     </>);
 }
