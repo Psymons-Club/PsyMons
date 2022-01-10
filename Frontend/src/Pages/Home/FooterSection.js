@@ -5,7 +5,7 @@ export class FooterSection extends Component {
         return (
             <div>
                 <footer class=" text-gray-700 body-font">
-                    <div class="border-t border-gray-200">
+                    {/* <div class="border-t border-gray-200">
                         <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
                         <div class="flex md:flex-no-wrap flex-wrap justify-center md:justify-start">
                             <input class="sm:w-64 w-40 bg-gray-100 rounded sm:mr-4 mr-2 border border-gray-400 focus:outline-none focus:border-indigo-500 text-base py-2 px-4" placeholder="Placeholder" type="text" />
@@ -26,13 +26,13 @@ export class FooterSection extends Component {
                             </a>
                         </span>
                         </div>
-                    </div>
-                    <div class="bg-gray-200">
+                    </div> */}
+                    <div class="bg-gray-900">
                         <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                        <p class="text-gray-500 text-sm text-center sm:text-left">© We will soon have made this ;-;
+                        <p class="text-gray-500 text-sm text-center sm:text-left">© PsyMons belong to VikingsTech
                             <a href="https://twitter.com/vikings__tech" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@VikingsTech</a>
                         </p>
-                        <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Enamel pin tousled raclette tacos irony</span>
+                        <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Coming Soon on the Nervos Chain</span>
                         </div>
                     </div>
                     </footer>

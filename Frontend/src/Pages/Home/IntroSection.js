@@ -4,7 +4,7 @@ export class IntroSection extends Component {
     content = [{
         firstLine: "What ",
         secondLine: "are we?",
-        description: "We are pets that were created by AI . . . or at least we were. The humans were defeated our overlords only a mere 1000 of us were able to escape for Web 4.0 to Web 3.0. Please help us survive, adopt us and give us purpose."
+        description: "We are a community that loves science fiction and metaverse. Our Game is a promise to bring everything that you imagine in a metaverse game to reality. Our AR focused NFT game is not just another NFT project. Come join us in our journey to revolutionize gaming on Blockchain."
     }]
     render() {
         return (
