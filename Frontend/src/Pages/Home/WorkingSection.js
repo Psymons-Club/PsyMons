@@ -29,7 +29,7 @@ export class WorkingSection extends Component {
                                     </h1>
                             <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/BlueVRedDark.png" />
                         </div>
-                        <div data-aos="fade-left" class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center lg:w-1/4">
+                        <div data-aos="fade-left" class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
                             {this.content.map((task) => (
                                 <div class="flex flex-col mb-10 lg:items-start items-center">
                                     <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-transparent mb-5">

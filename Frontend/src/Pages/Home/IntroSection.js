@@ -4,7 +4,7 @@ export class IntroSection extends Component {
     content = [{
         firstLine: "What ",
         secondLine: "are we?",
-        description: "Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray."
+        description: "We are pets that were created by AI . . . or at least we were. The humans were defeated our overlords only a mere 1000 of us were able to escape for Web 4.0 to Web 3.0. Please help us survive, adopt us and give us purpose."
     }]
     render() {
         return (

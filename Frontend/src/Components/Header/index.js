@@ -10,10 +10,10 @@ const user = {
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Banner', href: '#', current: true },
+    { name: 'What are we', href: '#', current: false },
+    { name: 'How it works', href: '#', current: false },
+    { name: 'Roadmap', href: '#', current: false },
 ]
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -47,10 +47,10 @@ export default function Example() {
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
                                         className="block lg:hidden h-8 w-auto"
-                                        src="/assets/logo.svg"
+                                        src="/assets/WebsiteRenders/logo.png"
                                         alt="PSYmons"
                                     />
-                                    <div className="font-bold hidden md:block text-xl text-white">PsyMons</div>
+                                    <div className="font-bold hidden md:block lg:font-extrabold text-xl text-yellow-400">PsyMons</div>
                                 </div>
                                 <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
                                     {navigation.map((item) => (

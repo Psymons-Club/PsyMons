@@ -16,10 +16,10 @@ const HeroSection = () => {
                       <a class="
                             no-underline
                             btn btn-primary rounded-full bg-white px-4 py-2 text-gray-900
-                            block sm:inline-block global-transition text-center" href="" target="">
+                            block sm:inline-block global-transition text-center hover:bg-yellow-400" href="https://twitter.com/PsymonClub" target="blank" >
                         <div class="flex justify-center items-center">
-                          <span>Get One</span>
-                          <span class="fa fa-xs fa-arrow-right ml-4"></span>
+                          <span>Follow us</span>
+                          <span class="fa fa-xs fa-twitter ml-4"></span>
                         </div>
                       </a>
                     </div>
