@@ -6,7 +6,7 @@ const HeroSection = () => {
             <section class="bg-red-200 text-gray-900 relative">
             
               <div class="min-h-screen bg-right-bottom bg-cover flex" style={{backgroundImage : `url("/assets/WebsiteRenders/All45Dark.png")`}}>
-                <div class="relative container mx-auto p-4 flex items-end z-10 font-encode font-extrabold">
+                <div class="relative container mx-auto p-4 flex items-end z-10 font-encode font-extrabold mb-20">
                   <div data-aos="fade-left">
                     <div class="content float-left py-4 px-5 my-5 text-gray-100">
                       <div class="heading mb-3 text-4xl md:text-4xl lg:text-7xl">COMING SOON</div>
@@ -16,19 +16,19 @@ const HeroSection = () => {
                       <a class="
                             no-underline
                             btn btn-primary rounded-full bg-white px-4 py-2 text-gray-900
-                            block sm:inline-block global-transition text-center hover:bg-yellow-400" href="https://twitter.com/PsymonClub" target="blank" >
+                            block inline-block global-transition text-center hover:bg-yellow-400" href="https://twitter.com/PsymonClub" target="blank" >
                         <div class="flex justify-center items-center">
-                          <span>Follow us</span>
-                          <span class="fab fa-lg fa-twitter ml-4"></span>
+                          <span class="hidden sm:block">Follow us</span>
+                          <span class="fab fa-lg fa-twitter sm:ml-4"></span>
                         </div>
                       </a>
                       <a class="
                             no-underline
                             btn btn-primary rounded-full bg-white mx-3 px-4 py-2 text-gray-900
-                            block sm:inline-block global-transition text-center hover:bg-yellow-400" href="https://discord.gg/M2835FP6zg" target="blank" >
+                            block inline-block global-transition text-center hover:bg-yellow-400" href="https://discord.gg/M2835FP6zg" target="blank" >
                         <div class="flex justify-center items-center">
-                          <span>Join Our Discord Server</span>
-                          <span class="fab fa-lg fa-discord ml-4"></span>
+                          <span class="hidden sm:block">Join Our Discord Server</span>
+                          <span class="fab fa-lg fa-discord sm:ml-4"></span>
                         </div>
                       </a>
                     </div>

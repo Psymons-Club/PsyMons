@@ -10,21 +10,12 @@ import 'aos/dist/aos.css'
 import HowItWorks from './AboutUs'
 
 export default function () {
-    useEffect(() => { Aos.init({ duration: 2000 }) }, [])
+    useEffect(() => { Aos.init({ duration: 1000 }) }, [])
     return (<>
         <HeroSection />
         <IntroSection />
-        {/* <HowItWorks /> */}
         <WorkingSection />
         <RoadmapSection />
-        {/* <div className={`flex mx-auto w-4/5`} style={{ height: "100vh" }}>
-        <div class="flex flex-col items-center dark-theme w-3/5 my-auto mx-auto p-6 -m-16 rounded-lg shadow-lg font-encode text-left">
-            <div class="font-extrabold text-7xl text-white">Partners</div>
-            <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut finibus tempor nisi, vulputate aliquam orci molestie quis.
-            </div>
-        </div>
-    </div> */}
         <FooterSection />
     </>)
 }
