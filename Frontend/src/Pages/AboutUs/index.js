@@ -4,14 +4,14 @@ import { useRef } from "react";
 import Typewriter from "typewriter-effect";
 
 const textToShow = [
-    "Once upon a Time....",
+    "Once upon a Time",
     "In 1001 AAI , technology had evolved to a point where it started sustaining itself.",
     "AI was not only doing what Humans did but started doing it better.",
     "They grew to become their own species, they evolved, even created their own Pets - PsyMons",
-    "Everything was perfect, for a long time Humans and AI lived in Harmony but.......",
+    "Everything was perfect, for a long time Humans and AI lived in Harmony but",
     "just like every sci-fi movie with an AI villain, they soon realized that no matter how much they tried to make our lives better, it doesn’t matter.",
     " Humans are going to keep making it worse and worse.",
-    "Soon it started a war on human kind, which we weren’t prepared for....",
+    "Soon it started a war on human kind, which we weren’t prepared for",
     "A few rebel groups struggled for years and were finally able to take out the AI. ",
     "The AI lived on it’s own autonomous network the Web 4.0, which got destroyed by the rebel groups. ",
     "Even in its last fraction of nano-seconds it saved the one thing that signified the only ‘love’ it ever felt. ",
@@ -40,7 +40,7 @@ const AboutUs = ({ }) => {
                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-5xl">From Web 4.0
                         <br class="hidden lg:inline-block" />To Web 3.0
                     </h1>
-                    <div className="mx-2 w-3/5 text-left font-encode font-bold">
+                    <div className="mx-2 w-3/5 text-left font-encode md:font-bold">
                         {textToShow.map((text) => (<div class="">
                                 {text}
                             </div>))
