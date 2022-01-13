@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 export class WorkingSection extends Component {
+    title = {
+        firstLine: "How ",
+        secondLine: "it works?"
+    }
     content = [{
         heading: "Mint",
         description: "Get your own PsyMon from our store",
@@ -21,11 +25,11 @@ export class WorkingSection extends Component {
         return (
             <div>
                 <section class="body-font border-t border-gray-200 dark-theme font-encode">
-                    <div class="container px-5 py-24 mx-auto flex flex-wrap">
-                        <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+                    <div class="container px-5 py-24 mx-auto w-5/6 flex flex-wrap">
+                        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 
-                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-7xl">How
-                                    <br class="hidden lg:inline-block" />it works?
+                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-7xl">{this.title.firstLine}
+                                    <br class="hidden lg:inline-block" />{this.title.secondLine}
                                     </h1>
                             <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/BlueVRedDark.png" />
                         </div>

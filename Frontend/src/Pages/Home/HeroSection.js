@@ -3,7 +3,7 @@ import React, { Component, useEffect } from 'react'
 const HeroSection = () => {
     return (<>
         <div>
-            <section class="bg-red-200 text-gray-900 relative">
+            <section class="bg-gray-200 text-gray-900 relative">
             
               <div class="min-h-screen bg-right-bottom bg-cover flex" style={{backgroundImage : `url("/assets/WebsiteRenders/All45Dark.png")`}}>
                 <div class="relative container mx-auto p-4 flex items-end z-10 font-encode font-extrabold mb-20">

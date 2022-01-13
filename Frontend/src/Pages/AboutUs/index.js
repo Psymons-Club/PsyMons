@@ -35,12 +35,12 @@ const AboutUs = ({ }) => {
     }
     return (<>
         <div className="w-full text-white h-screen flex items-center justify-around bg-right-bottom bg-cover" style={{backgroundImage : `url("/assets/WebsiteRenders/All45Dark.png")`}}>
-            <div className="w-full px-8" >
-                <div className="px-8 flex-grow">
-                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-5xl">From Web 4.0
-                        <br class="hidden lg:inline-block" />To Web 3.0
+            <div className="w-full px-8 text-center sm:text-left" >
+                <div className="px-8 flex-grow mt-16 sm:mt-0">
+                    <h1 class="title-font sm:text-4xl text-3xl sm:mb-4 font-medium text-white font-extrabold lg:text-5xl">From Web 4.0
+                        <br class="hidden lg:inline-block" />To Web 3
                     </h1>
-                    <div className="mx-2 w-3/5 text-left font-encode md:font-bold">
+                    <div className="sm:mx-2 w-full sm:w-3/5 font-encode md:font-bold">
                         {textToShow.map((text) => (<div class="">
                                 {text}
                             </div>))
