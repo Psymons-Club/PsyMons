@@ -46,7 +46,7 @@ export default function Example() {
                                 </div>
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
-                                        className="block h-10 w-auto m-2"
+                                        className="block h-8 w-auto"
                                         src="/assets/WebsiteRenders/logo.png"
                                         alt="PSYmons"
                                     />
