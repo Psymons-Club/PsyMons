@@ -10,7 +10,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 contract PsyMons is ERC721Enumerable,Ownable,ReentrancyGuard{
 
     //State
-    uint constant public MAX_SUPPLY = 991;
+    uint constant public MAX_SUPPLY = 901;
     uint constant public PRICE = 1 ether;
     string public PROVENANCE_HASH = "";
     string internal baseURI;
@@ -25,8 +25,8 @@ contract PsyMons is ERC721Enumerable,Ownable,ReentrancyGuard{
     mapping(uint=>uint) public reflectiveRetrieved;
     
     constructor() ERC721("PsyMons","PSY"){
-        for(uint i=992;i<=1001;i++){
-            _safeMint(i,msg.sender);
+        for(uint i=901;i<1001;i++){
+            _safeMint(msg.sender,i);
         }
     }
 

@@ -2,9 +2,11 @@
 /Frontend/node_modules
 Frontend/.pnp
 Frontend/.pnp.js
+.deps
 
 # testing
 Frontend/coverage
+secrets.js
 
 # production
 Frontend/build
