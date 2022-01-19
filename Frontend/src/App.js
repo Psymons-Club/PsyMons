@@ -9,9 +9,31 @@ import NewPet from "./Pages/NewPet"
 import Store from "./Pages/Store"
 import Home from "./Pages/Home"
 import AboutUs from './Pages/AboutUs';
+import NervosContext, {NervosProvider} from "./Contexts/NervosContext";
+import { Web3ReactProvider } from "@web3-react/core";
+import { Web3Provider as ww } from "@ethersproject/providers";
+
+
+
+function getLibrary(provider) {
+  var library;
+
+  if (provider?.chainType === "hmy") {
+    library = provider.blockchain;
+  } else {
+    library = new ww(provider);
+    library.pollingInterval = 12000;
+  }
+
+  return library;
+}
 
 function App() {
   return (
+    <>
+        <Web3ReactProvider getLibrary={getLibrary}>
+
+    <NervosProvider>
     <div className="background">
       <Router>
         <Header />
@@ -39,6 +61,9 @@ function App() {
       </Router>
 
     </div>
+    </NervosProvider>
+    </Web3ReactProvider>
+    </>
   );
 }
 

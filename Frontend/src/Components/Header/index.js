@@ -2,6 +2,9 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusSmIcon } from '@heroicons/react/solid'
+import { useContext } from 'react'
+import NervosContext from '../../Contexts/NervosContext'
+import { useEffect } from 'react'
 
 const user = {
     name: 'Tom Cook',
@@ -26,6 +29,14 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+    const {onClickMetamask, account} = useContext(NervosContext);
+    useEffect(()=>{
+        // onClickMetamask();
+        
+    },[])
+    useEffect(()=>{
+        console.log(account)
+    },[account])
     return (
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
@@ -69,14 +80,15 @@ export default function Example() {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                {/* <div className="flex-shrink-0">
+                                <div className="flex-shrink-0">
                                     <button
+                                    onClick={onClickMetamask}
                                         type="button"
                                         className="relative inline-flex items-center px-4 py-2 border border-white shadow-sm text-sm font-medium rounded-md text-white hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
                                     >
                                         <span>Connect to Wallet</span>
                                     </button>
-                                </div> */}
+                                </div>
                                 {/* <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
                                     <button
                                         type="button"
