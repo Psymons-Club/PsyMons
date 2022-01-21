@@ -3,7 +3,7 @@ import { useWeb3React } from "@web3-react/core";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import axios from "axios"
 import { Contract } from "@ethersproject/contracts";
-import { ethers, BigNumber } from "ethers";
+import { ethers, BigNumber, utils } from "ethers";
 import { Contract as MultiContract, Provider } from "ethers-multicall";
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { AddressTranslator } from 'nervos-godwoken-integration';
@@ -24,6 +24,7 @@ const NervosContext = createContext();
 const chibiCatsAbi={}
 const chibiVouchersAbi={}
 
+
 export const NervosProvider = (props) => {
     const [web3i,setWeb3i] = useState(null)
     const { activate, account, library } = useWeb3React();
@@ -36,11 +37,13 @@ export const NervosProvider = (props) => {
     });
     async function createWeb3() {
         // Modern dapp browsers...
+        console.log("Creating web3")
         if (window.ethereum) {
             try {
                 // Request account access if needed
                 await window.ethereum.enable();
             } catch (error) {
+                console.log(error);
                 // User denied account access...
             }
       
@@ -86,7 +89,7 @@ export const NervosProvider = (props) => {
         console.log(account)
         await _contract.methods.mint().send({
             from: window.ethereum.selectedAddress,
-            value:12
+            value:utils.parseEther("1")
         });
         setContract(_contract);
     }
