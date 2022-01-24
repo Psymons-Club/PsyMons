@@ -5,12 +5,9 @@ import WorkingSection from './WorkingSection'
 import FooterSection from './FooterSection'
 import RoadmapSection from './RoadmapSection'
 
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 import HowItWorks from './AboutUs'
 
 export default function () {
-    useEffect(() => { Aos.init({ duration: 1000 }) }, [])
     return (<>
         <HeroSection />
         <IntroSection />

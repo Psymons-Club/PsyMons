@@ -12,7 +12,11 @@ import AboutUs from './Pages/AboutUs';
 import NervosContext, {NervosProvider} from "./Contexts/NervosContext";
 import { Web3ReactProvider } from "@web3-react/core";
 import { Web3Provider as ww } from "@ethersproject/providers";
+import Create from './Pages/Create';
+import { useEffect } from 'react';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 
 function getLibrary(provider) {
@@ -29,6 +33,8 @@ function getLibrary(provider) {
 }
 
 function App() {
+  useEffect(() => { Aos.init({ duration: 1000 }) }, [])
+
   return (
     <>
         <Web3ReactProvider getLibrary={getLibrary}>
@@ -48,7 +54,7 @@ function App() {
             <PetDetail />
           </Route>
           <Route exact path="/new">
-            <NewPet />
+            <Create />
           </Route>
           <Route exact path="/store">
             <Store />

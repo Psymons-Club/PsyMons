@@ -21,15 +21,17 @@ const CHIBI_CAT_CONTRACT_ADDRESS = "0x2a4f248fbC5242560F342a382496b225E08CEC1A";
 const CHIBI_VOUCHERS_CONTRACT_ADDRESS = "0x2a4f248fbC5242560F342a382496b225E08CEC1A";
 const MULTI_CALL_ADDRESS = "0xd078799c53396616844e2fa97f0dd2b4c145a685"
 const NervosContext = createContext();
-const chibiCatsAbi={}
-const chibiVouchersAbi={}
+const chibiCatsAbi = {}
+const chibiVouchersAbi = {}
 
 
 export const NervosProvider = (props) => {
-    const [web3i,setWeb3i] = useState(null)
-    const { activate, account, library } = useWeb3React();
-    const [contract,setContract] = useState();
+    const [web3i, setWeb3i] = useState(null)
+    const { activate, library } = useWeb3React();
+    const [account, setAccount] = useState()
+    const [contract, setContract] = useState();
     const [polyjuiceAddress, setPolyjuiceAddress] = useState();
+    const [balance, setBalance] = useState();
     let chibiCatsContract, chibiVouchersContract;
     const { ethereum } = window;
     const injected = new InjectedConnector({
@@ -42,41 +44,51 @@ export const NervosProvider = (props) => {
             try {
                 // Request account access if needed
                 await window.ethereum.enable();
+                setAccount(window.ethereum.selectedAddress)
+                window.ethereum.on("accountsChanged", accounts => {
+                    setAccount(accounts[0]);
+                });
             } catch (error) {
                 console.log(error);
                 // User denied account access...
             }
-      
+
             return web3;
         }
-      
+
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
         return null;
-      }
-   
-    useEffect(()=>{
-        if(account){
-            try{
-                console.log(account)
-            const addressTranslator = new AddressTranslator();
-            setPolyjuiceAddress(addressTranslator.ethAddressToGodwokenShortAddress(account));
-            console.log(addressTranslator.ethAddressToGodwokenShortAddress(account))
+    }
+
+    useEffect(() => {
+        if (account && web3i) {
+            const fetchBalance = async () => {
+                try {
+                    console.log(account)
+                    const addressTranslator = new AddressTranslator();
+                    setPolyjuiceAddress(addressTranslator.ethAddressToGodwokenShortAddress(account));
+                    const _l2Balance = BigInt(await web3i.eth.getBalance(account));
+                    setBalance(_l2Balance / BigInt(10 ** 8));
+                    console.log(_l2Balance / BigInt(10 ** 8))
+                }
+                catch (e) {
+                    console.log(e)
+                }
             }
-            catch(e){
-                console.log(e)
-            }
+            fetchBalance()
         }
-        else{
+        else {
             setPolyjuiceAddress(undefined)
         }
-    },[account])
+    }, [account,web3i])
 
     const onClickMetamask = async () => {
         const _web3 = await createWeb3();
         console.log(_web3)
         setWeb3i(_web3);
-           
-        connectContracts(_web3)
+        if (_web3) {
+            connectContracts(_web3)
+        }
     };
     const disconnect = async () => {
         // setAccount()
@@ -86,22 +98,11 @@ export const NervosProvider = (props) => {
         const _contract = new _web3.eth.Contract(abi, CONTRACT_ADDRESS);
         console.log(_contract)
         console.log(await _contract.methods.totalSupply().call())
-        console.log(account)
-        await _contract.methods.mint().send({
-            from: window.ethereum.selectedAddress,
-            value:utils.parseEther("1")
-        });
         setContract(_contract);
+
+
     }
-    // useEffect(async () => {
-    //     if (!library) return;
-    //     const data =
-    //         library?.messenger?.chainType === "hmy"
-    //             ? library.provider
-    //             : await library.getSigner(account);
-    //     await connectContracts(data);
-    //     console.log(library);
-    // }, [library]);
+
 
     const setupNetwork = async (chainId, rpcUrl) => {
         const provider = window.ethereum;
@@ -141,22 +142,28 @@ export const NervosProvider = (props) => {
 
 
 
-    const setupContracts = async () => {
-        const signer = await library?.getSigner();
-        await connectContracts(signer);
-    }
-
 
 
 
 
     const functionsToExport = { onClickMetamask };
 
+    functionsToExport.mint = async () => {
+        try {
+            const res = await contract.methods.mint().send({
+                from: window.ethereum.selectedAddress,
+                value: 100000000
+            });
+            console.log(res);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
 
-    
 
 
-    return (<NervosContext.Provider value={{ account, ...functionsToExport }}>
+    return (<NervosContext.Provider value={{ account, balance, ...functionsToExport }}>
         {props.children}
     </NervosContext.Provider>)
 }
