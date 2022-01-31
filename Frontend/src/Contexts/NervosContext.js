@@ -7,7 +7,8 @@ import { ethers, BigNumber, utils } from "ethers";
 import { Contract as MultiContract, Provider } from "ethers-multicall";
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { AddressTranslator } from 'nervos-godwoken-integration';
-import { web3 } from './testnet.config';
+import TESTNETCONFIG from './testnet.config';
+const { web3 } = TESTNETCONFIG;
 
 import abi from "./abi"
 
@@ -16,7 +17,7 @@ import abi from "./abi"
 
 const RPC_URL = "https://godwoken-testnet-web3-rpc.ckbapp.dev";
 const CHAIN_ID = 71393;
-const CONTRACT_ADDRESS = "0x1ED9CBa87b742E389dBf58165e364a4CfFcEe15F";
+const CONTRACT_ADDRESS = "0xd3c6E04E5e27b971F11222E237Cc6B5108fac06c";
 const CHIBI_CAT_CONTRACT_ADDRESS = "0x2a4f248fbC5242560F342a382496b225E08CEC1A";
 const CHIBI_VOUCHERS_CONTRACT_ADDRESS = "0x2a4f248fbC5242560F342a382496b225E08CEC1A";
 const MULTI_CALL_ADDRESS = "0xd078799c53396616844e2fa97f0dd2b4c145a685"
@@ -80,7 +81,7 @@ export const NervosProvider = (props) => {
         else {
             setPolyjuiceAddress(undefined)
         }
-    }, [account,web3i])
+    }, [account, web3i])
 
     const onClickMetamask = async () => {
         const _web3 = await createWeb3();
@@ -158,6 +159,17 @@ export const NervosProvider = (props) => {
         }
         catch (e) {
             console.log(e);
+        }
+    }
+    functionsToExport.getBalanceOf = async () => {
+        try {
+            const res = await contract.methods.balanceOf(account)
+            console.log(res);
+            return res;
+        }
+        catch (e) {
+            console.log(e);
+            return 0
         }
     }
 

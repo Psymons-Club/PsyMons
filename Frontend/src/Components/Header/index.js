@@ -31,15 +31,15 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-    const {onClickMetamask, account,balance} = useContext(NervosContext);
-    useEffect(()=>{
+    const { onClickMetamask, account, balance } = useContext(NervosContext);
+    useEffect(() => {
         // onClickMetamask();
-        
-    },[])
+
+    }, [])
     console.log(balance);
-    useEffect(()=>{
+    useEffect(() => {
         console.log(account)
-    },[account])
+    }, [account])
     return (
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
@@ -85,66 +85,66 @@ export default function Example() {
                             <div className="flex items-center">
                                 <div className="flex-shrink-0">
                                     {!account &&
-                                    <button
-                                    onClick={onClickMetamask}
-                                        type="button"
-                                        className="relative inline-flex items-center px-4 py-2 border border-white shadow-sm text-sm font-medium rounded-md text-white hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
-                                    >
-                                        <span>Connect to Wallet</span>
-                                    </button>
-}
+                                        <button
+                                            onClick={onClickMetamask}
+                                            type="button"
+                                            className="relative inline-flex items-center px-4 py-2 border border-white shadow-sm text-sm font-medium rounded-md text-white hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
+                                        >
+                                            <span>Connect to Wallet</span>
+                                        </button>
+                                    }
                                 </div>
                                 <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
-                                
+
                                     {account &&
-                                    <Menu as="div" className="ml-3 relative">
-                                        <div>
-                                            <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                                                <span className="sr-only">Open user menu</span>
-                                                <Jazzicon diameter={32} seed={jsNumberForAddress('0x1111111111111111111111111111111111111111')} />
-                                            </Menu.Button>
-                                        </div>
-                                        <Transition
-                                            as={Fragment}
-                                            enter="transition ease-out duration-200"
-                                            enterFrom="transform opacity-0 scale-95"
-                                            enterTo="transform opacity-100 scale-100"
-                                            leave="transition ease-in duration-75"
-                                            leaveFrom="transform opacity-100 scale-100"
-                                            leaveTo="transform opacity-0 scale-95"
-                                        >
-                                            <Menu.Items className="z-50 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                            <Menu.Item key={"address"}>
+                                        <Menu as="div" className="ml-3 relative">
+                                            <div>
+                                                <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                                    <span className="sr-only">Open user menu</span>
+                                                    <Jazzicon diameter={32} seed={jsNumberForAddress(account)} />
+                                                </Menu.Button>
+                                            </div>
+                                            <Transition
+                                                as={Fragment}
+                                                enter="transition ease-out duration-200"
+                                                enterFrom="transform opacity-0 scale-95"
+                                                enterTo="transform opacity-100 scale-100"
+                                                leave="transition ease-in duration-75"
+                                                leaveFrom="transform opacity-100 scale-100"
+                                                leaveTo="transform opacity-0 scale-95"
+                                            >
+                                                <Menu.Items className="z-50 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                    <Menu.Item key={"address"}>
                                                         {({ active }) => (
                                                             <div
-                                                                
+
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100' : '',
                                                                     'block px-4 py-2 text-sm text-gray-700 break-all'
                                                                 )}
                                                             >
-                                                                Your Address:<br/>{account}
+                                                                Your Address:<br />{account}
                                                             </div>
                                                         )}
                                                     </Menu.Item>
                                                     <Menu.Item key={"balance"}>
                                                         {({ active }) => (
                                                             <div
-                                                                
+
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100' : '',
                                                                     'block px-4 py-2 text-sm text-gray-700'
                                                                 )}
                                                             >
-                                                                Your Balance:<br/>{balance?.toString()}
+                                                                Your Balance:<br />{balance?.toString()}
                                                             </div>
                                                         )}
                                                     </Menu.Item>
-                                              
-                                            </Menu.Items>
-                                        </Transition>
-                                    </Menu>
-}
+
+                                                </Menu.Items>
+                                            </Transition>
+                                        </Menu>
+                                    }
                                 </div>
                             </div>
                         </div>
