@@ -4,7 +4,9 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusSmIcon } from '@heroicons/react/solid'
 import { useContext } from 'react'
 import NervosContext from '../../Contexts/NervosContext'
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import Jazzicon, { jsNumberForAddress } from 'react-jazzicon'
+
 
 const user = {
     name: 'Tom Cook',
@@ -29,11 +31,12 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-    const {onClickMetamask, account} = useContext(NervosContext);
+    const {onClickMetamask, account,balance} = useContext(NervosContext);
     useEffect(()=>{
         // onClickMetamask();
         
     },[])
+    console.log(balance);
     useEffect(()=>{
         console.log(account)
     },[account])
@@ -81,6 +84,7 @@ export default function Example() {
                             </div>
                             <div className="flex items-center">
                                 <div className="flex-shrink-0">
+                                    {!account &&
                                     <button
                                     onClick={onClickMetamask}
                                         type="button"
@@ -88,22 +92,16 @@ export default function Example() {
                                     >
                                         <span>Connect to Wallet</span>
                                     </button>
+}
                                 </div>
-                                {/* <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
-                                    <button
-                                        type="button"
-                                        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                                    >
-                                        <span className="sr-only">View notifications</span>
-                                        <BellIcon className="h-6 w-6" aria-hidden="true" />
-                                    </button>
-
-                                    
+                                <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
+                                
+                                    {account &&
                                     <Menu as="div" className="ml-3 relative">
                                         <div>
                                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                 <span className="sr-only">Open user menu</span>
-                                                <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                                                <Jazzicon diameter={32} seed={jsNumberForAddress('0x1111111111111111111111111111111111111111')} />
                                             </Menu.Button>
                                         </div>
                                         <Transition
@@ -115,26 +113,39 @@ export default function Example() {
                                             leaveFrom="transform opacity-100 scale-100"
                                             leaveTo="transform opacity-0 scale-95"
                                         >
-                                            <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                {userNavigation.map((item) => (
-                                                    <Menu.Item key={item.name}>
+                                            <Menu.Items className="z-50 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Item key={"address"}>
                                                         {({ active }) => (
-                                                            <a
-                                                                href={item.href}
+                                                            <div
+                                                                
+                                                                className={classNames(
+                                                                    active ? 'bg-gray-100' : '',
+                                                                    'block px-4 py-2 text-sm text-gray-700 break-all'
+                                                                )}
+                                                            >
+                                                                Your Address:<br/>{account}
+                                                            </div>
+                                                        )}
+                                                    </Menu.Item>
+                                                    <Menu.Item key={"balance"}>
+                                                        {({ active }) => (
+                                                            <div
+                                                                
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100' : '',
                                                                     'block px-4 py-2 text-sm text-gray-700'
                                                                 )}
                                                             >
-                                                                {item.name}
-                                                            </a>
+                                                                Your Balance:<br/>{balance?.toString()}
+                                                            </div>
                                                         )}
                                                     </Menu.Item>
-                                                ))}
+                                              
                                             </Menu.Items>
                                         </Transition>
                                     </Menu>
-                                </div> */}
+}
+                                </div>
                             </div>
                         </div>
                     </div>
