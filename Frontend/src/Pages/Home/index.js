@@ -4,6 +4,7 @@ import IntroSection from './IntroSection'
 import WorkingSection from './WorkingSection'
 import FooterSection from './FooterSection'
 import RoadmapSection from './RoadmapSection'
+import Gallery from './Gallery' 
 
 import HowItWorks from './AboutUs'
 
@@ -13,6 +14,7 @@ export default function () {
         <IntroSection />
         <WorkingSection />
         <RoadmapSection />
+        <Gallery />
         <FooterSection />
     </>)
 }
