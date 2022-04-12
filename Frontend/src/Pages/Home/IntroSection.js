@@ -9,7 +9,7 @@ export class IntroSection extends Component {
     render() {
         return (
             <div>
-                {this.content.map ((section) => (
+                {this.content.map((section) => (
                     <div>
                         {console.log(section)}
                         <section class="font-encode dark-theme border-t border-gray-200">
@@ -24,14 +24,14 @@ export class IntroSection extends Component {
                                     </div>
                                 </div>
                                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                                    <img class="object-cover object-center rounded" alt="hero" src="/assets/WebsiteRenders/AllDarkNoBG.png" />
+                                    <img class="object-cover object-center rounded" alt="hero" src="/assets/WebsiteRenders/AllNoBG.png" />
                                 </div>
                             </div>
                         </section>
                     </div>
                 ))}
             </div>
-            
+
         )
     }
 }

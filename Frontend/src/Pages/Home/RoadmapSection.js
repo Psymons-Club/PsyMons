@@ -35,7 +35,7 @@ export class RoadmapSection extends Component {
                                 </div>
                             </div>
                             <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-                                <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/JockGlassGlowNoBG.png" />
+                                <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/JockNoBG.png" />
                             </div>
                         </div>
                     </div>

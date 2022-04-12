@@ -28,10 +28,10 @@ export class WorkingSection extends Component {
                     <div class="container px-5 py-24 mx-auto w-5/6 flex flex-wrap">
                         <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 
-                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-7xl">{this.title.firstLine}
-                                    <br class="hidden lg:inline-block" />{this.title.secondLine}
-                                    </h1>
-                            <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/BlueVRedDark.png" />
+                            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white font-extrabold lg:text-7xl">{this.title.firstLine}
+                                <br class="hidden lg:inline-block" />{this.title.secondLine}
+                            </h1>
+                            <img alt="feature" class="object-center justify-center w-full" src="/assets/WebsiteRenders/BlueVRedNoBG.png" />
                         </div>
                         <div data-aos="fade-left" class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
                             {this.content.map((task) => (
